@@ -10,11 +10,11 @@
 
 $sts_library = function_exists( 'sts_theme_library_url' ) ? sts_theme_library_url() : home_url( '/sermons/' );
 ?>
-<!-- wp:group {"align":"full","className":"sts-hero","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"gradient":"night","textColor":"white","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull sts-hero has-white-color has-night-gradient-background has-text-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|50"}}}} -->
+<!-- wp:group {"align":"full","className":"stt-hero","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"gradient":"night","textColor":"white","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull stt-hero has-white-color has-night-gradient-background has-text-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|50"}}}} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"58%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:58%"><!-- wp:paragraph {"className":"sts-eyebrow on-dark"} -->
-<p class="sts-eyebrow on-dark"><?php esc_html_e( 'Zero data entry', 'sts-theme' ); ?></p>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:58%"><!-- wp:paragraph {"className":"stt-eyebrow on-dark"} -->
+<p class="stt-eyebrow on-dark"><?php esc_html_e( 'Zero data entry', 'sts-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":1,"textColor":"white"} -->
@@ -37,8 +37,8 @@ $sts_library = function_exists( 'sts_theme_library_url' ) ? sts_theme_library_ur
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"center","width":"42%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:42%"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"sts-hero-art"} -->
-<figure class="wp-block-image size-full sts-hero-art"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/symbol-on-dark.svg' ) ); ?>" alt="<?php esc_attr_e( 'A sound wave becomes a web page', 'sts-theme' ); ?>"/></figure>
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:42%"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"stt-hero-art"} -->
+<figure class="wp-block-image size-full stt-hero-art"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/symbol-on-dark.svg' ) ); ?>" alt="<?php esc_attr_e( 'A sound wave becomes a web page', 'sts-theme' ); ?>"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>

@@ -3,7 +3,7 @@ Contributors: avdude
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 0.1.0
+Stable tag: 0.1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,6 +28,9 @@ The home page walks a visitor through what Sermon to Site does, with the plugin'
 Headings use Montserrat, the brand's typeface, loaded from Google Fonts. Body text uses the visitor's system font.
 
 == Changelog ==
+
+= 0.1.1 =
+* The theme's class names now start with "stt-". They had shared names with the plugin's own (sts-hero, sts-card, sts-icon), so the plugin's styles changed the theme's hero and the theme's card style would have changed the plugin's sermon cards.
 
 = 0.1.0 =
 * First version.

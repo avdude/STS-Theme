@@ -11,12 +11,12 @@
 
 $sts_library = function_exists( 'sts_theme_library_url' ) ? sts_theme_library_url() : home_url( '/sermons/' );
 ?>
-<!-- wp:group {"align":"full","className":"sts-footer","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|40"}},"elements":{"link":{"color":{"text":"#D7E2EC"}}}},"backgroundColor":"navy-deep","textColor":"white","layout":{"type":"default"}} -->
-<div class="wp-block-group alignfull sts-footer has-white-color has-navy-deep-background-color has-text-color has-background has-link-color" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--40)"><!-- wp:group {"className":"sts-footer-row","layout":{"type":"default"}} -->
-<div class="wp-block-group sts-footer-row"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"var:preset|spacing|50"}}}} -->
+<!-- wp:group {"align":"full","className":"stt-footer","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|40"}},"elements":{"link":{"color":{"text":"#D7E2EC"}}}},"backgroundColor":"navy-deep","textColor":"white","layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull stt-footer has-white-color has-navy-deep-background-color has-text-color has-background has-link-color" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--40)"><!-- wp:group {"className":"stt-footer-row","layout":{"type":"default"}} -->
+<div class="wp-block-group stt-footer-row"><!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"var:preset|spacing|50"}}}} -->
 <div class="wp-block-columns"><!-- wp:column {"width":"46%"} -->
-<div class="wp-block-column" style="flex-basis:46%"><!-- wp:image {"sizeSlug":"full","linkDestination":"custom","className":"sts-logo"} -->
-<figure class="wp-block-image size-full sts-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/logo-horizontal-white.svg' ) ); ?>" alt="<?php esc_attr_e( 'Sermon to Site home', 'sts-theme' ); ?>"/></a></figure>
+<div class="wp-block-column" style="flex-basis:46%"><!-- wp:image {"sizeSlug":"full","linkDestination":"custom","className":"stt-logo"} -->
+<figure class="wp-block-image size-full stt-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/logo-horizontal-white.svg' ) ); ?>" alt="<?php esc_attr_e( 'Sermon to Site home', 'sts-theme' ); ?>"/></a></figure>
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"style":{"color":{"text":"#B9C7D2"}}} -->

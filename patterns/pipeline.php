@@ -11,8 +11,8 @@
 ?>
 <!-- wp:group {"anchor":"how-it-works","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
 <div id="how-it-works" class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--50)"><!-- wp:group {"align":"wide","layout":{"type":"constrained","contentSize":"720px","justifyContent":"left"}} -->
-<div class="wp-block-group alignwide"><!-- wp:paragraph {"className":"sts-eyebrow on-light"} -->
-<p class="sts-eyebrow on-light"><?php esc_html_e( 'How it works', 'sts-theme' ); ?></p>
+<div class="wp-block-group alignwide"><!-- wp:paragraph {"className":"stt-eyebrow on-light"} -->
+<p class="stt-eyebrow on-light"><?php esc_html_e( 'How it works', 'sts-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
@@ -24,8 +24,8 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:list {"className":"sts-pipeline","align":"wide"} -->
-<ul class="wp-block-list alignwide sts-pipeline"><!-- wp:list-item -->
+<!-- wp:list {"className":"stt-pipeline","align":"wide"} -->
+<ul class="wp-block-list alignwide stt-pipeline"><!-- wp:list-item -->
 <li><strong><?php esc_html_e( 'Detected', 'sts-theme' ); ?></strong><?php esc_html_e( 'Finds the service on Facebook, YouTube, Vimeo or your podcast feed, live streams too.', 'sts-theme' ); ?></li>
 <!-- /wp:list-item -->
 

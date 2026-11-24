@@ -85,7 +85,7 @@ function sts_theme_missing_plugin_note( $html, $block ) {
 	if ( ! current_user_can( 'activate_plugins' ) ) {
 		return '';
 	}
-	return '<div class="sts-missing"><strong>' . esc_html__( 'Sermon to Site isn\'t active.', 'sts-theme' ) . '</strong> '
+	return '<div class="stt-missing"><strong>' . esc_html__( 'Sermon to Site isn\'t active.', 'sts-theme' ) . '</strong> '
 		. esc_html__( 'Install and activate the plugin to show this section. Only administrators see this note.', 'sts-theme' )
 		. ' <a href="' . esc_url( admin_url( 'plugins.php' ) ) . '">' . esc_html__( 'Go to Plugins', 'sts-theme' ) . '</a></div>';
 }

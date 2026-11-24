@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.1.1] - 2026-11-24
+
+- The theme's class names now start with `stt-`. They shared names with the plugin's own (`sts-hero`, `sts-card`, `sts-icon`, `sts-main`), so the plugin's styles rounded and reshaped the theme's hero, and the theme's card style would have reshaped the plugin's sermon cards.
+- The plugin's sermon pages keep the plugin's own spacing (the theme no longer adds padding to them).
+
 ## [0.1.0] - 2026-11-23
 
 First version.

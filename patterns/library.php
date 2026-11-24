@@ -13,8 +13,8 @@ $sts_library = function_exists( 'sts_theme_library_url' ) ? sts_theme_library_ur
 <!-- wp:group {"anchor":"library","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
 <div id="library" class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"bottom"}} -->
 <div class="wp-block-group alignwide"><!-- wp:group {"layout":{"type":"default"}} -->
-<div class="wp-block-group"><!-- wp:paragraph {"className":"sts-eyebrow on-light"} -->
-<p class="sts-eyebrow on-light"><?php esc_html_e( 'The library', 'sts-theme' ); ?></p>
+<div class="wp-block-group"><!-- wp:paragraph {"className":"stt-eyebrow on-light"} -->
+<p class="stt-eyebrow on-light"><?php esc_html_e( 'The library', 'sts-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->

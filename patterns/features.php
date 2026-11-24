@@ -11,8 +11,8 @@
 ?>
 <!-- wp:group {"anchor":"features","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"white","layout":{"type":"constrained"}} -->
 <div id="features" class="wp-block-group alignfull has-white-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:group {"align":"wide","layout":{"type":"constrained","contentSize":"720px","justifyContent":"left"}} -->
-<div class="wp-block-group alignwide"><!-- wp:paragraph {"className":"sts-eyebrow on-light"} -->
-<p class="sts-eyebrow on-light"><?php esc_html_e( 'What it does', 'sts-theme' ); ?></p>
+<div class="wp-block-group alignwide"><!-- wp:paragraph {"className":"stt-eyebrow on-light"} -->
+<p class="stt-eyebrow on-light"><?php esc_html_e( 'What it does', 'sts-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
@@ -20,10 +20,10 @@
 <!-- /wp:heading --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"align":"wide","className":"sts-cards","layout":{"type":"default"}} -->
-<div class="wp-block-group alignwide sts-cards"><!-- wp:group {"className":"sts-card","layout":{"type":"default"}} -->
-<div class="wp-block-group sts-card"><!-- wp:paragraph {"className":"sts-icon"} -->
-<p class="sts-icon" aria-hidden="true">&#9673;</p>
+<!-- wp:group {"align":"wide","className":"stt-cards","layout":{"type":"default"}} -->
+<div class="wp-block-group alignwide stt-cards"><!-- wp:group {"className":"stt-card","layout":{"type":"default"}} -->
+<div class="wp-block-group stt-card"><!-- wp:paragraph {"className":"stt-icon"} -->
+<p class="stt-icon" aria-hidden="true">&#9673;</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":3} -->
@@ -35,9 +35,9 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"sts-card","layout":{"type":"default"}} -->
-<div class="wp-block-group sts-card"><!-- wp:paragraph {"className":"sts-icon"} -->
-<p class="sts-icon" aria-hidden="true">&#10022;</p>
+<!-- wp:group {"className":"stt-card","layout":{"type":"default"}} -->
+<div class="wp-block-group stt-card"><!-- wp:paragraph {"className":"stt-icon"} -->
+<p class="stt-icon" aria-hidden="true">&#10022;</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":3} -->
@@ -49,9 +49,9 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"sts-card","layout":{"type":"default"}} -->
-<div class="wp-block-group sts-card"><!-- wp:paragraph {"className":"sts-icon"} -->
-<p class="sts-icon" aria-hidden="true">&#9654;</p>
+<!-- wp:group {"className":"stt-card","layout":{"type":"default"}} -->
+<div class="wp-block-group stt-card"><!-- wp:paragraph {"className":"stt-icon"} -->
+<p class="stt-icon" aria-hidden="true">&#9654;</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":3} -->
@@ -63,9 +63,9 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"sts-card","layout":{"type":"default"}} -->
-<div class="wp-block-group sts-card"><!-- wp:paragraph {"className":"sts-icon"} -->
-<p class="sts-icon" aria-hidden="true">&#9776;</p>
+<!-- wp:group {"className":"stt-card","layout":{"type":"default"}} -->
+<div class="wp-block-group stt-card"><!-- wp:paragraph {"className":"stt-icon"} -->
+<p class="stt-icon" aria-hidden="true">&#9776;</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":3} -->
@@ -77,9 +77,9 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"sts-card","layout":{"type":"default"}} -->
-<div class="wp-block-group sts-card"><!-- wp:paragraph {"className":"sts-icon"} -->
-<p class="sts-icon" aria-hidden="true">&#9835;</p>
+<!-- wp:group {"className":"stt-card","layout":{"type":"default"}} -->
+<div class="wp-block-group stt-card"><!-- wp:paragraph {"className":"stt-icon"} -->
+<p class="stt-icon" aria-hidden="true">&#9835;</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":3} -->
@@ -91,9 +91,9 @@
 <!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"sts-card","layout":{"type":"default"}} -->
-<div class="wp-block-group sts-card"><!-- wp:paragraph {"className":"sts-icon"} -->
-<p class="sts-icon" aria-hidden="true">&#8634;</p>
+<!-- wp:group {"className":"stt-card","layout":{"type":"default"}} -->
+<div class="wp-block-group stt-card"><!-- wp:paragraph {"className":"stt-icon"} -->
+<p class="stt-icon" aria-hidden="true">&#8634;</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":3} -->
