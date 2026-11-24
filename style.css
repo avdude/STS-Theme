@@ -4,7 +4,7 @@ Theme URI: https://sermontosite.com
 Author: avdude
 Author URI: https://avdude.com
 Description: A block theme that shows off the Sermon to Site plugin. A navy, gold and teal look from the Sermon to Site brand, a home page that walks through how Sunday's service becomes a sermon page (with the plugin's live blocks in place), and header and footer parts that the plugin's sermon, library and series pages sit inside.
-Version: 0.6.0
+Version: 0.6.1
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 8.1
@@ -157,3 +157,16 @@ a { text-underline-offset: 3px; }
 /* "Questions? support@…" on the beta page */
 .stt-support { margin-top: 18px; padding: 14px 18px; border-radius: 14px; background: #fff; border: 1px solid var(--wp--preset--color--line); font-size: .9375rem; }
 .stt-support a { font-weight: 600; }
+
+/* Podcast buttons: a color and a simple icon for each (no third-party logos) */
+.sts .sts-subscribe__buttons .sts-btn { gap: 9px; color: #fff; border-color: transparent; }
+.sts .sts-subscribe__buttons .sts-btn::before { content: ""; flex: none; width: 18px; height: 18px; background: currentColor; -webkit-mask: var(--stt-icon) center / contain no-repeat; mask: var(--stt-icon) center / contain no-repeat; }
+.sts .sts-subscribe__buttons .sts-btn[href*="podcasts.apple.com"] { --stt-icon: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27black%27 stroke-width=%272.2%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Cpath d=%27M4 15v-3a8 8 0 0 1 16 0v3%27/%3E%3Crect x=%273%27 y=%2714%27 width=%274.5%27 height=%277%27 rx=%271.6%27 fill=%27black%27/%3E%3Crect x=%2716.5%27 y=%2714%27 width=%274.5%27 height=%277%27 rx=%271.6%27 fill=%27black%27/%3E%3C/svg%3E"); background: #8E3FD1; }
+.sts .sts-subscribe__buttons .sts-btn[href*="podcasts.apple.com"]:hover { background: #7B35C2; }
+.sts .sts-subscribe__buttons .sts-btn[href*="spotify.com"] { --stt-icon: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27black%27%3E%3Crect x=%272.5%27 y=%279%27 width=%273.4%27 height=%276%27 rx=%271.7%27/%3E%3Crect x=%277.7%27 y=%275%27 width=%273.4%27 height=%2714%27 rx=%271.7%27/%3E%3Crect x=%2712.9%27 y=%272.5%27 width=%273.4%27 height=%2719%27 rx=%271.7%27/%3E%3Crect x=%2718.1%27 y=%277%27 width=%273.4%27 height=%2710%27 rx=%271.7%27/%3E%3C/svg%3E"); background: #137A38; }
+.sts .sts-subscribe__buttons .sts-btn[href*="spotify.com"]:hover { background: #0F6A30; }
+.sts .sts-subscribe__buttons .sts-btn[data-sts-copy] { --stt-icon: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27black%27 stroke-width=%272.6%27 stroke-linecap=%27round%27%3E%3Cpath d=%27M4 11a9 9 0 0 1 9 9%27/%3E%3Cpath d=%27M4 4a16 16 0 0 1 16 16%27/%3E%3Ccircle cx=%275%27 cy=%2719%27 r=%271.8%27 fill=%27black%27 stroke=%27none%27/%3E%3C/svg%3E"); background: #C2510E; }
+.sts .sts-subscribe__buttons .sts-btn[data-sts-copy]:hover { background: #A9450B; }
+/* Any other podcast link the plugin adds later: the brand navy, no icon. */
+.sts .sts-subscribe__buttons .sts-btn:not([href*="podcasts.apple.com"]):not([href*="spotify.com"]):not([data-sts-copy]) { background: var(--wp--preset--color--navy); }
+.sts .sts-subscribe__buttons .sts-btn:not([href*="podcasts.apple.com"]):not([href*="spotify.com"]):not([data-sts-copy])::before { display: none; }

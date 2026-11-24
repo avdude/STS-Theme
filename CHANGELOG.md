@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.6.1] - 2026-11-24
+
+- Podcast subscribe buttons (the plugin's `.sts-subscribe__buttons`) get colors and icons in the theme: Apple Podcasts `#8E3FD1` with a headphones icon, Spotify `#137A38` with sound bars, Copy RSS link `#C2510E` with the feed icon. The icons are simple shapes drawn for the theme (CSS masks), not the services' logos. White text meets 4.5:1 contrast on all three. Any other podcast link shows in the brand navy without an icon.
+
 ## [0.6.0] - 2026-11-24
 
 - Beta sign-up notices go to the support address, support@sermontosite.com (`sts_theme_support_email()`, filter `sts_theme_support_email`; falls back to the admin email if the filtered value isn't an email), sent From that address with Reply-To set to the person.
