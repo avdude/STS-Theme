@@ -3,7 +3,7 @@ Contributors: avdude
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 0.4.2
+Stable tag: 0.5.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,13 +23,18 @@ The home page walks a visitor through what Sermon to Site does, with the plugin'
 6. Home page sections are patterns in the "Sermon to Site" category. In Appearance > Editor > Templates > Pages: Front Page you can reorder, remove or edit them.
 7. For the hands-on features page: Pages > Add New, title "By hand" (address /by-hand/, which the header and footer link to), choose the template "Hands-on features (showcase)" and publish. The page's content comes from the template; leave the editor empty.
 8. For the import page: a page titled "Import" (address /import/, which the footer and the By hand page link to) with the template "Import (showcase)"; leave the editor empty.
-9. For a page that shows the full library, choose the "Wide page" template and add the Sermon library block.
+9. For the beta sign-up page: a page titled "Beta" (address /beta/, which the header button and the call to action link to) with the template "Beta tester sign-up"; leave the editor empty. Sign-ups appear under Beta testers in the admin menu (with Download CSV), and each one is emailed to the site's admin email address.
+10. For a page that shows the full library, choose the "Wide page" template and add the Sermon library block.
 
 == Fonts ==
 
 Headings use Montserrat, the brand's typeface, loaded from Google Fonts. Body text uses the visitor's system font.
 
 == Changelog ==
+
+= 0.5.0 =
+* New: beta tester sign-up page (template "Beta tester sign-up"): name, email, website (required) and phone (optional). Sign-ups are saved under Beta testers in the admin (with Download CSV) and emailed to the admin address. A spam trap, a time check and a limit per visitor keep bots out.
+* The header button ("Be a beta tester") and the call to action ("Get a pre-release copy") open the sign-up page.
 
 = 0.4.2 =
 * Descriptions are at most about 155 characters, as search engines show (Bing flagged the home page's as too long). A sermon's description is the first sentences of its summary that fit.

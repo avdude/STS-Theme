@@ -10,6 +10,6 @@ if [ -n "${1:-}" ] && [ "$1" != "$VERSION_IN_CSS" ]; then
 	exit 1
 fi
 rm -rf build && mkdir -p "build/$SLUG"
-cp -r style.css theme.json functions.php readme.txt LICENSE screenshot.png assets parts patterns templates "build/$SLUG/"
+cp -r style.css theme.json functions.php readme.txt LICENSE screenshot.png assets inc parts patterns templates "build/$SLUG/"
 (cd build && zip -qr "../$SLUG.zip" "$SLUG")
 echo "Built $SLUG.zip ($VERSION_IN_CSS)"

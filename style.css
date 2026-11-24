@@ -4,7 +4,7 @@ Theme URI: https://sermontosite.com
 Author: avdude
 Author URI: https://avdude.com
 Description: A block theme that shows off the Sermon to Site plugin. A navy, gold and teal look from the Sermon to Site brand, a home page that walks through how Sunday's service becomes a sermon page (with the plugin's live blocks in place), and header and footer parts that the plugin's sermon, library and series pages sit inside.
-Version: 0.4.2
+Version: 0.5.0
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 8.1
@@ -131,3 +131,25 @@ a { text-underline-offset: 3px; }
 .stt-shot-phone img { max-width: 300px; margin: 0 auto; border-radius: 28px; border: 8px solid var(--wp--preset--color--navy); }
 .stt-row h3 { margin-top: 8px; }
 @media (max-width: 781px) { .stt-row-flip { flex-direction: column; } .stt-row:not(.stt-row-flip) { flex-direction: column-reverse; } }
+
+/* Beta sign-up form */
+.stt-form-card { padding: clamp(22px, 3vw, 34px); border-radius: 22px; background: #fff; border: 1px solid var(--wp--preset--color--line); box-shadow: 0 30px 60px -40px rgba(11,45,80,.5); }
+.stt-form-card h3 { margin-top: 0; }
+.stt-form { display: grid; gap: 4px; }
+.stt-field { margin: 0 0 14px; }
+.stt-field label { display: block; margin-bottom: 6px; font-family: var(--wp--preset--font-family--heading); font-weight: 600; font-size: .9375rem; color: var(--wp--preset--color--navy); }
+.stt-req { color: #B42318; }
+.stt-opt { font-family: var(--wp--preset--font-family--body); font-weight: 400; color: var(--wp--preset--color--muted); font-size: .8125rem; }
+.stt-field input { box-sizing: border-box; width: 100%; min-height: 48px; padding: 10px 14px; border: 1px solid #B9C7D2; border-radius: 12px; background: #fff; font: inherit; color: var(--wp--preset--color--ink); }
+.stt-field input:focus { outline: 3px solid rgba(0,143,168,.35); outline-offset: 1px; border-color: var(--wp--preset--color--teal); }
+.stt-field.has-error input { border-color: #B42318; }
+.stt-hp { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; overflow: hidden; }
+.stt-form-submit { margin: 6px 0 0; }
+.stt-form-submit button { width: 100%; border: 0; cursor: pointer; }
+.stt-form-note { margin: 10px 0 0; font-size: .8125rem; color: var(--wp--preset--color--muted); }
+.stt-form-errors { margin-bottom: 14px; padding: 12px 16px; border-radius: 12px; background: #FEF3F2; border: 1px solid #FECDCA; color: #912018; font-size: .9375rem; }
+.stt-form-errors p, .stt-form-errors ul { margin: 0; }
+.stt-form-errors ul { padding-left: 18px; }
+.stt-form-done { padding: 22px; border-radius: 16px; background: var(--wp--preset--color--teal-soft); color: var(--wp--preset--color--teal-deep); }
+.stt-form-done strong { display: block; font-family: var(--wp--preset--font-family--heading); font-size: 1.25rem; color: var(--wp--preset--color--navy); }
+.stt-form-done p { margin: 6px 0 0; }

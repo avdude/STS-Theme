@@ -82,6 +82,7 @@
 	"customTemplates": [
 		{ "name": "page-wide", "title": "Wide page (sermon library and showcase pages)", "postTypes": ["page"] },
 		{ "name": "page-hands-on", "title": "Hands-on features (showcase)", "postTypes": ["page"] },
-		{ "name": "page-import", "title": "Import (showcase)", "postTypes": ["page"] }
+		{ "name": "page-import", "title": "Import (showcase)", "postTypes": ["page"] },
+		{ "name": "page-beta", "title": "Beta tester sign-up", "postTypes": ["page"] }
 	]
 }

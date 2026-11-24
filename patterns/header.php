@@ -33,7 +33,7 @@ $sts_library = function_exists( 'sts_theme_library_url' ) ? sts_theme_library_ur
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://sermontosite.com"><?php esc_html_e( 'Get Sermon to Site', 'sts-theme' ); ?></a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/beta/' ) ); ?>"><?php esc_html_e( 'Be a beta tester', 'sts-theme' ); ?></a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons --></div>
 <!-- /wp:group --></div>

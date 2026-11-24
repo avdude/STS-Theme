@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.5.0] - 2026-11-24
+
+- New: beta tester sign-up page at /beta/ (template `page-beta`, pattern `sts-theme/beta`, form `[stt_beta_form]` in `inc/beta-signup.php`). Fields: name, email and website (required), phone (optional). Each sign-up is saved as a private Beta tester entry (admin menu Beta testers, with Name, Email, Phone, Website and date columns and Download CSV), one per email address, and emailed to the site's admin address with Reply-To set to the person. Spam: a hidden trap field, a three-second minimum, and five tries an hour per address; the nonce guards against forged posts. Mistakes send the visitor back with their answers kept (in a short-lived transient, never in the address) and each problem listed.
+- The header button now reads "Be a beta tester" and the call to action "Get a pre-release copy"; both open /beta/ (they linked to the home page).
+
 ## [0.4.2] - 2026-11-24
 
 - Meta descriptions are at most about 155 characters (`sts_theme_trim_description()`): whole sentences while they fit, otherwise cut at a word with an ellipsis. Bing Webmaster Tools flagged the home page's 220-character description. The site description is shorter, and a sermon uses the first sentences of its summary.

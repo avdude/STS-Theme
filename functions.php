@@ -63,6 +63,8 @@ function sts_theme_plugin_active() {
 	return defined( 'SERMONTOSITE_VERSION' );
 }
 
+require_once get_theme_file_path( 'inc/beta-signup.php' );
+
 add_action( 'init', 'sts_theme_pattern_category' );
 /** A pattern category for the showcase sections. */
 function sts_theme_pattern_category() {
@@ -180,6 +182,7 @@ function sts_theme_description_text() {
 			}
 			$templates = array(
 				'page-hands-on' => __( 'Everything Sermon to Site lets you do by hand: add sermons, upload audio, edit what AI wrote, bring your own transcript and approve before publishing.', 'sts-theme' ),
+				'page-beta'     => __( 'Get a pre-release copy of Sermon to Site and help shape it: sign up to be a beta tester and try it on your own WordPress site.', 'sts-theme' ),
 				'page-import'   => __( 'Move your Sermon Manager library in one click, or add sermons by hand from recordings, the Media Library, files on your server or links.', 'sts-theme' ),
 			);
 			$slug = get_page_template_slug( $post );
