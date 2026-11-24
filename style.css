@@ -4,7 +4,7 @@ Theme URI: https://sermontosite.com
 Author: avdude
 Author URI: https://avdude.com
 Description: A block theme that shows off the Sermon to Site plugin. A navy, gold and teal look from the Sermon to Site brand, a home page that walks through how Sunday's service becomes a sermon page (with the plugin's live blocks in place), and header and footer parts that the plugin's sermon, library and series pages sit inside.
-Version: 0.3.1
+Version: 0.4.0
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 8.1
@@ -124,3 +124,10 @@ a { text-underline-offset: 3px; }
 .stt-chips strong { margin-right: 4px; color: var(--wp--preset--color--navy); font-family: var(--wp--preset--font-family--heading); }
 .stt-chips span { padding: 4px 12px; border-radius: 999px; background: var(--wp--preset--color--teal-soft); color: var(--wp--preset--color--teal-deep); font-size: .875rem; font-weight: 600; }
 .stt-note { padding: 14px 18px; border-left: 4px solid var(--wp--preset--color--gold); border-radius: 0 12px 12px 0; background: rgba(244,180,0,.08); color: var(--wp--preset--color--muted); font-size: .9375rem; }
+
+/* Screenshots */
+.stt-shot img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--wp--preset--color--line); box-shadow: 0 30px 60px -36px rgba(11,45,80,.55); background: #fff; }
+.stt-shot figcaption { margin-top: 12px; text-align: center; color: var(--wp--preset--color--muted); font-size: .875rem; }
+.stt-shot-phone img { max-width: 300px; margin: 0 auto; border-radius: 28px; border: 8px solid var(--wp--preset--color--navy); }
+.stt-row h3 { margin-top: 8px; }
+@media (max-width: 781px) { .stt-row-flip { flex-direction: column; } .stt-row:not(.stt-row-flip) { flex-direction: column-reverse; } }

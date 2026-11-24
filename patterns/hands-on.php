@@ -191,7 +191,11 @@ $sts_library = function_exists( 'sts_theme_library_url' ) ? sts_theme_library_ur
 <p><?php esc_html_e( 'Bring over Sermon Manager, Mattytap Sermons, Advanced Sermons or Church Content in batches. The originals are never changed, and old sermon links redirect to the new pages.', 'sts-theme' ); ?> <a href="<?php echo esc_url( home_url( '/import/' ) ); ?>"><?php esc_html_e( 'How importing works', 'sts-theme' ); ?> &rarr;</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
-<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:image {"align":"wide","sizeSlug":"full","linkDestination":"none","className":"stt-shot","style":{"spacing":{"margin":{"top":"var:preset|spacing|50"}}}} -->
+<figure class="wp-block-image alignwide size-full stt-shot" style="margin-top:var(--wp--preset--spacing--50)"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/screens/editor.jpg' ) ); ?>" alt="<?php esc_attr_e( 'The sermon editor with the summary, key points, Scripture, media, speaker and series', 'sts-theme' ); ?>"/><figcaption class="wp-element-caption"><?php esc_html_e( 'The sermon editor: the summary, key points, Scripture, discussion questions, media, speaker, series and topics on one screen.', 'sts-theme' ); ?></figcaption></figure>
+<!-- /wp:image --></div>
 <!-- /wp:group -->
 
 <!-- wp:group {"anchor":"control","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"teal-soft","layout":{"type":"constrained"}} -->

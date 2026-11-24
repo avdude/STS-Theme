@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.0] - 2026-11-24
+
+- New: "See it working" section on the home page (pattern `sts-theme/screens`), after the feature cards: the sermon page, public library, sermon editor, Sermons screen and phone view, each with a short explanation. Images are the plugin's WordPress.org screenshots, cropped and compressed (`assets/images/screens/`).
+- The By hand page shows the sermon editor under its feature cards.
+- The social preview image (`og-image.jpg`) is now the official Sermon to Site banner on navy.
+
 ## [0.3.1] - 2026-11-24
 
 - New: description and social preview tags (Open Graph and X/Twitter) on every page, with a 1200×630 brand preview image (`assets/images/og-image.jpg`). Sermons with a featured image use it. Skipped when Yoast, Rank Math, AIOSEO, SEOPress or The SEO Framework is active; Jetpack's own tags are turned off so pages don't get two sets.
