@@ -39,6 +39,10 @@ $sts_library = function_exists( 'sts_theme_library_url' ) ? sts_theme_library_ur
 <!-- /wp:list-item -->
 
 <!-- wp:list-item -->
+<li><a href="<?php echo esc_url( home_url( '/by-hand/' ) ); ?>"><?php esc_html_e( 'Doing it by hand', 'sts-theme' ); ?></a></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
 <li><a href="<?php echo esc_url( home_url( '/#podcast' ) ); ?>"><?php esc_html_e( 'Podcast', 'sts-theme' ); ?></a></li>
 <!-- /wp:list-item --></ul>
 <!-- /wp:list --></div>

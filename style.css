@@ -4,7 +4,7 @@ Theme URI: https://sermontosite.com
 Author: avdude
 Author URI: https://avdude.com
 Description: A block theme that shows off the Sermon to Site plugin. A navy, gold and teal look from the Sermon to Site brand, a home page that walks through how Sunday's service becomes a sermon page (with the plugin's live blocks in place), and header and footer parts that the plugin's sermon, library and series pages sit inside.
-Version: 0.1.1
+Version: 0.2.0
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 8.1
@@ -79,3 +79,37 @@ a { text-underline-offset: 3px; }
 .stt-footer .stt-logo img { height: 44px; }
 .stt-footer .wp-block-navigation { --navigation-layout-direction: column; }
 
+
+/* Hands-on page: "Every step, two ways" table */
+.stt-compare table { border-collapse: separate; border-spacing: 0; width: 100%; background: #fff; border: 1px solid var(--wp--preset--color--line); border-radius: 20px; overflow: hidden; font-size: .9375rem; }
+.stt-compare th, .stt-compare td { padding: 16px 20px; border: 0; border-bottom: 1px solid var(--wp--preset--color--line); text-align: left; vertical-align: top; }
+.stt-compare tr:last-child td { border-bottom: 0; }
+.stt-compare thead th { background: var(--wp--preset--color--navy); color: #fff; font-family: var(--wp--preset--font-family--heading); font-weight: 700; border-bottom: 0; }
+.stt-compare thead th:last-child { background: var(--wp--preset--color--gold); color: var(--wp--preset--color--navy); }
+.stt-compare td:first-child { width: 20%; color: var(--wp--preset--color--navy); }
+.stt-compare td:nth-child(2) { color: var(--wp--preset--color--muted); }
+.stt-compare td:last-child { background: rgba(244,180,0,.07); }
+@media (max-width: 700px) {
+	.stt-compare thead { display: none; }
+	.stt-compare tr { display: block; padding: 14px 18px; border-bottom: 1px solid var(--wp--preset--color--line); }
+	.stt-compare td { display: block; padding: 4px 0; border: 0; width: auto !important; background: none !important; }
+	.stt-compare td:nth-child(2)::before { content: "On autopilot: "; font-weight: 700; color: var(--wp--preset--color--teal-deep); }
+	.stt-compare td:last-child::before { content: "By hand: "; font-weight: 700; color: #7A5600; }
+}
+
+/* Hands-on page: check list */
+.stt-checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.stt-checks li { position: relative; padding: 16px 18px 16px 52px; border-radius: 16px; background: #fff; border: 1px solid var(--wp--preset--color--line); }
+.stt-checks li::before { content: "\2713"; position: absolute; left: 16px; top: 15px; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--wp--preset--color--teal); color: #fff; font-size: .8125rem; font-weight: 700; }
+
+/* Hands-on page: blocks and shortcodes */
+.stt-codes { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+.stt-codes li { display: flex; flex-direction: column; gap: 6px; padding: 20px; border-radius: 16px; background: #fff; border: 1px solid var(--wp--preset--color--line); }
+.stt-codes strong { font-family: var(--wp--preset--font-family--heading); color: var(--wp--preset--color--navy); }
+.stt-codes code { align-self: flex-start; padding: 3px 8px; border-radius: 8px; background: var(--wp--preset--color--paper); border: 1px solid var(--wp--preset--color--line); color: var(--wp--preset--color--teal-deep); font-size: .8125rem; word-break: break-all; }
+.stt-codes span { color: var(--wp--preset--color--muted); font-size: .9375rem; }
+
+/* Hands-on page: nine cards, three across */
+.stt-cards.stt-cards-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 960px) { .stt-cards.stt-cards-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .stt-cards.stt-cards-3 { grid-template-columns: 1fr; } }

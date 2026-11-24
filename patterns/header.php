@@ -27,6 +27,7 @@ $sts_library = function_exists( 'sts_theme_library_url' ) ? sts_theme_library_ur
 <div class="wp-block-group"><!-- wp:navigation {"overlayMenu":"mobile","layout":{"type":"flex","justifyContent":"right"},"style":{"spacing":{"blockGap":"26px"}}} -->
 <!-- wp:navigation-link {"label":"<?php echo esc_attr__( 'How it works', 'sts-theme' ); ?>","url":"<?php echo esc_url( home_url( '/#how-it-works' ) ); ?>","kind":"custom"} /-->
 <!-- wp:navigation-link {"label":"<?php echo esc_attr__( 'Sermons', 'sts-theme' ); ?>","url":"<?php echo esc_url( $sts_library ); ?>","kind":"custom"} /-->
+<!-- wp:navigation-link {"label":"<?php echo esc_attr__( 'By hand', 'sts-theme' ); ?>","url":"<?php echo esc_url( home_url( '/by-hand/' ) ); ?>","kind":"custom"} /-->
 <!-- wp:navigation-link {"label":"<?php echo esc_attr__( 'Podcast', 'sts-theme' ); ?>","url":"<?php echo esc_url( home_url( '/#podcast' ) ); ?>","kind":"custom"} /-->
 <!-- /wp:navigation -->
 

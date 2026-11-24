@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.2.0] - 2026-11-24
+
+- New: Hands-on features page. Choose the template "Hands-on features (showcase)" on a page at /by-hand/. It shows everything the plugin lets you do by hand: a two-way comparison (on autopilot / by hand), nine feature cards, the privacy and approval controls, and the six blocks and shortcodes. The content is also a pattern ("Hands-on features page") in the Sermon to Site category.
+- Header and footer link to /by-hand/.
+
 ## [0.1.1] - 2026-11-24
 
 - The theme's class names now start with `stt-`. They shared names with the plugin's own (`sts-hero`, `sts-card`, `sts-icon`, `sts-main`), so the plugin's styles rounded and reshaped the theme's hero, and the theme's card style would have reshaped the plugin's sermon cards.

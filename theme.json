@@ -80,6 +80,7 @@
 		{ "name": "footer", "title": "Footer", "area": "footer" }
 	],
 	"customTemplates": [
-		{ "name": "page-wide", "title": "Wide page (sermon library and showcase pages)", "postTypes": ["page"] }
+		{ "name": "page-wide", "title": "Wide page (sermon library and showcase pages)", "postTypes": ["page"] },
+		{ "name": "page-hands-on", "title": "Hands-on features (showcase)", "postTypes": ["page"] }
 	]
 }
