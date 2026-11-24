@@ -3,7 +3,7 @@ Contributors: avdude
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 0.5.0
+Stable tag: 0.5.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,9 @@ The home page walks a visitor through what Sermon to Site does, with the plugin'
 Headings use Montserrat, the brand's typeface, loaded from Google Fonts. Body text uses the visitor's system font.
 
 == Changelog ==
+
+= 0.5.1 =
+* Fixed: the beta sign-up page showed "[stt_beta_form]" instead of the form. Shortcode blocks now run in the theme's templates.
 
 = 0.5.0 =
 * New: beta tester sign-up page (template "Beta tester sign-up"): name, email, website (required) and phone (optional). Sign-ups are saved under Beta testers in the admin (with Download CSV) and emailed to the admin address. A spam trap, a time check and a limit per visitor keep bots out.

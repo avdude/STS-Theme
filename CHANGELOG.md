@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.5.1] - 2026-11-24
+
+- Fixed: the beta sign-up page showed `[stt_beta_form]` instead of the form. WordPress runs shortcodes in post content but not in block templates, so the theme now runs them in shortcode blocks wherever they render (`sts_theme_template_shortcodes()`).
+
 ## [0.5.0] - 2026-11-24
 
 - New: beta tester sign-up page at /beta/ (template `page-beta`, pattern `sts-theme/beta`, form `[stt_beta_form]` in `inc/beta-signup.php`). Fields: name, email and website (required), phone (optional). Each sign-up is saved as a private Beta tester entry (admin menu Beta testers, with Name, Email, Phone, Website and date columns and Download CSV), one per email address, and emailed to the site's admin address with Reply-To set to the person. Spam: a hidden trap field, a three-second minimum, and five tries an hour per address; the nonce guards against forged posts. Mistakes send the visitor back with their answers kept (in a short-lived transient, never in the address) and each problem listed.

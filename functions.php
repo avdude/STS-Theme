@@ -271,3 +271,16 @@ function sts_theme_social_tags() {
 		printf( '<meta %s="%s" content="%s" />' . "\n", esc_attr( $t[0] ), esc_attr( $t[1] ), 'og:url' === $t[1] || 'og:image' === $t[1] || 'twitter:image' === $t[1] ? esc_url( $t[2] ) : esc_attr( $t[2] ) );
 	}
 }
+
+add_filter( 'render_block_core/shortcode', 'sts_theme_template_shortcodes' );
+/**
+ * Shortcode blocks run in templates too. In a post, the content filter runs
+ * them; in a template (the beta sign-up page's form) nothing else does, so
+ * the page showed "[stt_beta_form]".
+ *
+ * @param string $html Block output.
+ * @return string
+ */
+function sts_theme_template_shortcodes( $html ) {
+	return str_contains( (string) $html, '[' ) ? do_shortcode( $html ) : $html;
+}
