@@ -1,0 +1,65 @@
+# Belongs to: Sermon to Site Showcase theme. Save as C:\DEV\STS-Theme\.github\workflows\release.yml
+name: Release
+
+# Push a tag like v0.1.0 to publish a GitHub Release with sts-theme.<version>.zip attached.
+# Run it by hand (Actions → Release → Run workflow) to build a test zip without releasing.
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: none
+
+      - name: Check PHP and JSON
+        run: |
+          for f in functions.php patterns/*.php; do php -l "$f"; done
+          python3 -m json.tool theme.json > /dev/null
+
+      - name: Build zip
+        run: |
+          if [ "${GITHUB_REF_TYPE}" = "tag" ]; then
+            bash bin/build-zip.sh "${GITHUB_REF_NAME#v}"
+          else
+            bash bin/build-zip.sh
+          fi
+
+      - name: Upload zip (manual runs)
+        if: github.ref_type != 'tag'
+        uses: actions/upload-artifact@v5
+        with:
+          name: sts-theme
+          path: build/sts-theme
+          retention-days: 14
+
+      - name: Publish GitHub Release
+        if: github.ref_type == 'tag'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          awk -v v="$VERSION" '
+            $0 ~ "^## \\[" v "\\]" {on=1; next}
+            on && /^## \[/ {exit}
+            on {print}
+          ' CHANGELOG.md > notes.md
+          [ -s notes.md ] || echo "Sermon to Site Showcase $VERSION" > notes.md
+          echo "" >> notes.md
+          echo "**Install:** download \`sts-theme.$VERSION.zip\` below (not \"Source code\"), then Appearance → Themes → Add New Theme → Upload Theme." >> notes.md
+          PRERELEASE=""
+          case "$VERSION" in 0.*|*-*) PRERELEASE="--prerelease";; esac
+          # Version in the file name; the folder inside stays sts-theme/ so updates replace the old copy.
+          mv sts-theme.zip "sts-theme.$VERSION.zip"
+          gh release create "$GITHUB_REF_NAME" "sts-theme.$VERSION.zip" \
+            --title "Sermon to Site Showcase $VERSION" --notes-file notes.md $PRERELEASE
