@@ -124,12 +124,51 @@ function sts_theme_jetpack_open_graph( $enabled ) {
 }
 
 /**
- * The description for the current page: the page's excerpt, its text, or the site's.
+ * A description no longer than search engines show (about 155 characters):
+ * whole sentences while they fit, otherwise cut at a word with "…".
+ *
+ * @param string $text Text.
+ * @param int    $max  Most characters.
+ * @return string
+ */
+function sts_theme_trim_description( $text, $max = 155 ) {
+	$text = trim( (string) preg_replace( '/\s+/u', ' ', wp_strip_all_tags( (string) $text ) ) );
+	if ( mb_strlen( $text ) <= $max ) {
+		return $text;
+	}
+	$out = '';
+	foreach ( (array) preg_split( '/(?<=[.!?])\s+/u', $text ) as $sentence ) {
+		$next = trim( $out . ' ' . $sentence );
+		if ( mb_strlen( $next ) > $max ) {
+			break;
+		}
+		$out = $next;
+	}
+	if ( mb_strlen( $out ) >= 50 ) {
+		return $out;
+	}
+	$cut = (string) preg_replace( '/\s+\S*$/u', '', mb_substr( $text, 0, $max - 1 ) );
+	return rtrim( $cut, " ,;:-\u{2013}\u{2014}" ) . '…';
+}
+
+/**
+ * The description for the current page, at most about 155 characters: the
+ * page's excerpt or text, a sermon's summary, a description written for a
+ * series, speaker or topic (or one made from its name), or the site's.
  *
  * @return string
  */
 function sts_theme_description() {
-	$site = __( 'Sermon to Site is a WordPress plugin that finds your service on Facebook, YouTube, Vimeo or your podcast feed and turns it into a finished sermon page, with the speaker, series, scripture, summary and transcript filled in.', 'sts-theme' );
+	return sts_theme_trim_description( sts_theme_description_text() );
+}
+
+/**
+ * The description before trimming.
+ *
+ * @return string
+ */
+function sts_theme_description_text() {
+	$site = __( 'Sermon to Site turns your church\'s livestream into a finished sermon page on your WordPress site: speaker, series, scripture, summary and transcript.', 'sts-theme' );
 	if ( is_front_page() || is_home() ) {
 		return $site;
 	}
@@ -137,11 +176,11 @@ function sts_theme_description() {
 		$post = get_queried_object();
 		if ( $post instanceof WP_Post ) {
 			if ( has_excerpt( $post ) ) {
-				return wp_strip_all_tags( get_the_excerpt( $post ) );
+				return get_the_excerpt( $post );
 			}
 			$templates = array(
-				'page-hands-on' => __( 'Everything Sermon to Site lets you do by hand: add sermons yourself, upload audio, edit what AI wrote, bring your own transcript and approve before anything goes live.', 'sts-theme' ),
-				'page-import'   => __( 'Move your Sermon Manager library to Sermon to Site in one click, or add sermons by hand from recordings, the Media Library, files on your server or links.', 'sts-theme' ),
+				'page-hands-on' => __( 'Everything Sermon to Site lets you do by hand: add sermons, upload audio, edit what AI wrote, bring your own transcript and approve before publishing.', 'sts-theme' ),
+				'page-import'   => __( 'Move your Sermon Manager library in one click, or add sermons by hand from recordings, the Media Library, files on your server or links.', 'sts-theme' ),
 			);
 			$slug = get_page_template_slug( $post );
 			if ( isset( $templates[ $slug ] ) ) {
@@ -149,11 +188,40 @@ function sts_theme_description() {
 			}
 			$text = wp_strip_all_tags( strip_shortcodes( excerpt_remove_blocks( $post->post_content ) ) );
 			if ( '' !== trim( $text ) ) {
-				return wp_trim_words( $text, 30, '…' );
+				return $text;
 			}
 		}
 	}
-	if ( is_post_type_archive() || is_tax() || is_category() || is_tag() ) {
+	if ( is_post_type_archive( 'sermontosite_sermon' ) ) {
+		return __( 'Every sermon in one place: watch or listen, read summaries and transcripts, and search by series, speaker, Bible book or topic.', 'sts-theme' );
+	}
+	if ( is_tax() || is_category() || is_tag() ) {
+		$term = get_queried_object();
+		$desc = wp_strip_all_tags( (string) term_description() );
+		if ( '' !== trim( $desc ) ) {
+			return $desc;
+		}
+		if ( $term instanceof WP_Term ) {
+			$count = (int) $term->count;
+			/* translators: %d: number of sermons. */
+			$many = sprintf( _n( '%d sermon', '%d sermons', $count, 'sts-theme' ), $count );
+			switch ( $term->taxonomy ) {
+				case 'sermontosite_series':
+					/* translators: 1: series name, 2: "3 sermons". */
+					return sprintf( __( 'The %1$s sermon series: %2$s to watch or listen to, with summaries, key points and full transcripts.', 'sts-theme' ), $term->name, $many );
+				case 'sermontosite_speaker':
+					/* translators: 1: speaker name, 2: "3 sermons". */
+					return sprintf( __( 'Sermons by %1$s: %2$s to watch or listen to, with summaries, key points and full transcripts.', 'sts-theme' ), $term->name, $many );
+				case 'sermontosite_book':
+					/* translators: 1: Bible book, 2: "3 sermons". */
+					return sprintf( __( 'Sermons from the book of %1$s: %2$s to watch or listen to, with summaries, key points and full transcripts.', 'sts-theme' ), $term->name, $many );
+				case 'sermontosite_topic':
+					/* translators: 1: topic, 2: "3 sermons". */
+					return sprintf( __( 'Sermons about %1$s: %2$s to watch or listen to, with summaries, key points and full transcripts.', 'sts-theme' ), $term->name, $many );
+			}
+		}
+	}
+	if ( is_post_type_archive() || is_archive() ) {
 		$desc = wp_strip_all_tags( (string) get_the_archive_description() );
 		if ( '' !== trim( $desc ) ) {
 			return $desc;

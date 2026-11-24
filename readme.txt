@@ -3,7 +3,7 @@ Contributors: avdude
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 0.4.1
+Stable tag: 0.4.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,10 @@ The home page walks a visitor through what Sermon to Site does, with the plugin'
 Headings use Montserrat, the brand's typeface, loaded from Google Fonts. Body text uses the visitor's system font.
 
 == Changelog ==
+
+= 0.4.2 =
+* Descriptions are at most about 155 characters, as search engines show (Bing flagged the home page's as too long). A sermon's description is the first sentences of its summary that fit.
+* The sermon library and the series, speaker, Bible book and topic pages have their own descriptions instead of the site's.
 
 = 0.4.1 =
 * The home page's library section no longer shows "Recent sermons" twice (the Sermon library block has its own heading).

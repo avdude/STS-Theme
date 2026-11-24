@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.4.2] - 2026-11-24
+
+- Meta descriptions are at most about 155 characters (`sts_theme_trim_description()`): whole sentences while they fit, otherwise cut at a word with an ellipsis. Bing Webmaster Tools flagged the home page's 220-character description. The site description is shorter, and a sermon uses the first sentences of its summary.
+- The sermon library (`/sermons/`) and series, speaker, Bible book and topic pages get their own descriptions (a description written for the term, or one made from its name and sermon count) instead of the site's.
+
 ## [0.4.1] - 2026-11-24
 
 - The home page's library section showed "Recent sermons" twice: the theme's heading and the Sermon library block's own. The theme's heading is gone.
