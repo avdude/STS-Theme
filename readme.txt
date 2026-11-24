@@ -3,7 +3,7 @@ Contributors: avdude
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 0.2.0
+Stable tag: 0.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,13 +22,18 @@ The home page walks a visitor through what Sermon to Site does, with the plugin'
 5. Edit the gold demo bar, menu and button in Appearance > Editor > Patterns > Header. Remove the bar there if you don't want it.
 6. Home page sections are patterns in the "Sermon to Site" category. In Appearance > Editor > Templates > Pages: Front Page you can reorder, remove or edit them.
 7. For the hands-on features page: Pages > Add New, title "By hand" (address /by-hand/, which the header and footer link to), choose the template "Hands-on features (showcase)" and publish. The page's content comes from the template; leave the editor empty.
-8. For a page that shows the full library, choose the "Wide page" template and add the Sermon library block.
+8. For the import page: a page titled "Import" (address /import/, which the footer and the By hand page link to) with the template "Import (showcase)"; leave the editor empty.
+9. For a page that shows the full library, choose the "Wide page" template and add the Sermon library block.
 
 == Fonts ==
 
 Headings use Montserrat, the brand's typeface, loaded from Google Fonts. Body text uses the visitor's system font.
 
 == Changelog ==
+
+= 0.3.0 =
+* New: Import page (template "Import (showcase)" and pattern): moving from Sermon Manager, and every way to add sermons by hand.
+* The footer and the By hand page link to it at /import/.
 
 = 0.2.0 =
 * New: Hands-on features page (template "Hands-on features (showcase)" and pattern) showing everything Sermon to Site lets you do by hand.

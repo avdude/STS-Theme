@@ -188,7 +188,7 @@ $sts_library = function_exists( 'sts_theme_library_url' ) ? sts_theme_library_ur
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php esc_html_e( 'Bring over Sermon Manager, Mattytap Sermons, Advanced Sermons or Church Content in batches. The originals are never changed, and old sermon links redirect to the new pages.', 'sts-theme' ); ?></p>
+<p><?php esc_html_e( 'Bring over Sermon Manager, Mattytap Sermons, Advanced Sermons or Church Content in batches. The originals are never changed, and old sermon links redirect to the new pages.', 'sts-theme' ); ?> <a href="<?php echo esc_url( home_url( '/import/' ) ); ?>"><?php esc_html_e( 'How importing works', 'sts-theme' ); ?> &rarr;</a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>

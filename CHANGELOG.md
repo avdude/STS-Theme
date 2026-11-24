@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.3.0] - 2026-11-24
+
+- New: Import page. Choose the template "Import (showcase)" on a page at /import/. It covers moving from Sermon Manager (three steps, what comes across, why it's safe, the other plugins it imports from) and every way to add sermons by hand (upload, Media Library, server folder, links, the Audio and video box, transcripts), plus what the plugin fills in for you. The content is also a pattern ("Import page").
+- The footer and the By hand page's import card link to /import/.
+
 ## [0.2.0] - 2026-11-24
 
 - New: Hands-on features page. Choose the template "Hands-on features (showcase)" on a page at /by-hand/. It shows everything the plugin lets you do by hand: a two-way comparison (on autopilot / by hand), nine feature cards, the privacy and approval controls, and the six blocks and shortcodes. The content is also a pattern ("Hands-on features page") in the Sermon to Site category.

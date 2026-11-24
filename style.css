@@ -4,7 +4,7 @@ Theme URI: https://sermontosite.com
 Author: avdude
 Author URI: https://avdude.com
 Description: A block theme that shows off the Sermon to Site plugin. A navy, gold and teal look from the Sermon to Site brand, a home page that walks through how Sunday's service becomes a sermon page (with the plugin's live blocks in place), and header and footer parts that the plugin's sermon, library and series pages sit inside.
-Version: 0.2.0
+Version: 0.3.0
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 8.1
@@ -113,3 +113,14 @@ a { text-underline-offset: 3px; }
 .stt-cards.stt-cards-3 { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 960px) { .stt-cards.stt-cards-3 { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px) { .stt-cards.stt-cards-3 { grid-template-columns: 1fr; } }
+
+/* Import page: three numbered steps, two-column checks, chips, note */
+.stt-pipeline.stt-steps-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 760px) { .stt-pipeline.stt-steps-3 { grid-template-columns: 1fr; } .stt-pipeline.stt-steps-3 li::after { display: none; } }
+.stt-checks.stt-checks-2 { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 760px) { .stt-checks.stt-checks-2 { grid-template-columns: 1fr; } }
+#sermon-manager .stt-checks li, #sermon-manager .stt-card, #sermon-manager .stt-pipeline li { background: var(--wp--preset--color--paper); }
+.stt-chips { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.stt-chips strong { margin-right: 4px; color: var(--wp--preset--color--navy); font-family: var(--wp--preset--font-family--heading); }
+.stt-chips span { padding: 4px 12px; border-radius: 999px; background: var(--wp--preset--color--teal-soft); color: var(--wp--preset--color--teal-deep); font-size: .875rem; font-weight: 600; }
+.stt-note { padding: 14px 18px; border-left: 4px solid var(--wp--preset--color--gold); border-radius: 0 12px 12px 0; background: rgba(244,180,0,.08); color: var(--wp--preset--color--muted); font-size: .9375rem; }
