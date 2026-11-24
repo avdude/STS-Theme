@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.1] - 2026-11-24
+
+- New: description and social preview tags (Open Graph and X/Twitter) on every page, with a 1200×630 brand preview image (`assets/images/og-image.jpg`). Sermons with a featured image use it. Skipped when Yoast, Rank Math, AIOSEO, SEOPress or The SEO Framework is active; Jetpack's own tags are turned off so pages don't get two sets.
+- Pages have an Excerpt box, used as the page's description. The By hand and Import pages have built-in descriptions.
+- The 512×512 site icon is included (`assets/images/site-icon.png`).
+
 ## [0.3.0] - 2026-11-24
 
 - New: Import page. Choose the template "Import (showcase)" on a page at /import/. It covers moving from Sermon Manager (three steps, what comes across, why it's safe, the other plugins it imports from) and every way to add sermons by hand (upload, Media Library, server folder, links, the Audio and video box, transcripts), plus what the plugin fills in for you. The content is also a pattern ("Import page").

@@ -100,3 +100,103 @@ function sts_theme_library_url() {
 	}
 	return home_url( '/sermons/' );
 }
+
+add_action( 'after_setup_theme', 'sts_theme_page_excerpts', 11 );
+/** Pages get an excerpt box, used as their description in search results and link previews. */
+function sts_theme_page_excerpts() {
+	add_post_type_support( 'page', 'excerpt' );
+}
+
+/** Whether an SEO plugin that writes its own description and social tags is active. */
+function sts_theme_seo_plugin_active() {
+	return defined( 'WPSEO_VERSION' ) || defined( 'RANK_MATH_VERSION' ) || defined( 'AIOSEO_VERSION' ) || defined( 'SEOPRESS_VERSION' ) || class_exists( 'The_SEO_Framework\Load' );
+}
+
+add_filter( 'jetpack_enable_open_graph', 'sts_theme_jetpack_open_graph' );
+/**
+ * Jetpack's social tags stay off while the theme writes its own, so a page never has two sets.
+ *
+ * @param bool $enabled Jetpack's choice.
+ * @return bool
+ */
+function sts_theme_jetpack_open_graph( $enabled ) {
+	return sts_theme_seo_plugin_active() ? $enabled : false;
+}
+
+/**
+ * The description for the current page: the page's excerpt, its text, or the site's.
+ *
+ * @return string
+ */
+function sts_theme_description() {
+	$site = __( 'Sermon to Site is a WordPress plugin that finds your service on Facebook, YouTube, Vimeo or your podcast feed and turns it into a finished sermon page, with the speaker, series, scripture, summary and transcript filled in.', 'sts-theme' );
+	if ( is_front_page() || is_home() ) {
+		return $site;
+	}
+	if ( is_singular() ) {
+		$post = get_queried_object();
+		if ( $post instanceof WP_Post ) {
+			if ( has_excerpt( $post ) ) {
+				return wp_strip_all_tags( get_the_excerpt( $post ) );
+			}
+			$templates = array(
+				'page-hands-on' => __( 'Everything Sermon to Site lets you do by hand: add sermons yourself, upload audio, edit what AI wrote, bring your own transcript and approve before anything goes live.', 'sts-theme' ),
+				'page-import'   => __( 'Move your Sermon Manager library to Sermon to Site in one click, or add sermons by hand from recordings, the Media Library, files on your server or links.', 'sts-theme' ),
+			);
+			$slug = get_page_template_slug( $post );
+			if ( isset( $templates[ $slug ] ) ) {
+				return $templates[ $slug ];
+			}
+			$text = wp_strip_all_tags( strip_shortcodes( excerpt_remove_blocks( $post->post_content ) ) );
+			if ( '' !== trim( $text ) ) {
+				return wp_trim_words( $text, 30, '…' );
+			}
+		}
+	}
+	if ( is_post_type_archive() || is_tax() || is_category() || is_tag() ) {
+		$desc = wp_strip_all_tags( (string) get_the_archive_description() );
+		if ( '' !== trim( $desc ) ) {
+			return $desc;
+		}
+	}
+	return $site;
+}
+
+add_action( 'wp_head', 'sts_theme_social_tags', 5 );
+/** Description and social preview tags (Open Graph and X/Twitter), unless an SEO plugin writes them. */
+function sts_theme_social_tags() {
+	if ( sts_theme_seo_plugin_active() || is_404() || is_search() ) {
+		return;
+	}
+	$desc  = sts_theme_description();
+	$title = wp_get_document_title();
+	global $wp;
+	$url   = is_singular() ? get_permalink() : user_trailingslashit( home_url( $wp->request ) );
+	$image = get_theme_file_uri( 'assets/images/og-image.jpg' );
+	$w     = 1200;
+	$h     = 630;
+	if ( is_singular() && has_post_thumbnail() ) {
+		$src = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
+		if ( $src ) {
+			list( $image, $w, $h ) = $src;
+		}
+	}
+	$tags = array(
+		array( 'name', 'description', $desc ),
+		array( 'property', 'og:type', is_singular( 'post' ) || is_singular( 'sermontosite_sermon' ) ? 'article' : 'website' ),
+		array( 'property', 'og:site_name', get_bloginfo( 'name' ) ),
+		array( 'property', 'og:title', $title ),
+		array( 'property', 'og:description', $desc ),
+		array( 'property', 'og:url', $url ),
+		array( 'property', 'og:image', $image ),
+		array( 'property', 'og:image:width', (string) $w ),
+		array( 'property', 'og:image:height', (string) $h ),
+		array( 'name', 'twitter:card', 'summary_large_image' ),
+		array( 'name', 'twitter:title', $title ),
+		array( 'name', 'twitter:description', $desc ),
+		array( 'name', 'twitter:image', $image ),
+	);
+	foreach ( $tags as $t ) {
+		printf( '<meta %s="%s" content="%s" />' . "\n", esc_attr( $t[0] ), esc_attr( $t[1] ), 'og:url' === $t[1] || 'og:image' === $t[1] || 'twitter:image' === $t[1] ? esc_url( $t[2] ) : esc_attr( $t[2] ) );
+	}
+}

@@ -3,7 +3,7 @@ Contributors: avdude
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 0.3.0
+Stable tag: 0.3.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,11 @@ The home page walks a visitor through what Sermon to Site does, with the plugin'
 Headings use Montserrat, the brand's typeface, loaded from Google Fonts. Body text uses the visitor's system font.
 
 == Changelog ==
+
+= 0.3.1 =
+* New: a description and social preview tags (Open Graph and X/Twitter) on every page, with a brand preview image, so shared links show a title, summary and picture. Sermons use their own image. Skipped when an SEO plugin (Yoast, Rank Math, AIOSEO, SEOPress, The SEO Framework) is active; Jetpack's tags are turned off so pages don't get two sets.
+* Pages have an Excerpt box; what you write there becomes the page's description.
+* The site icon image is included (assets/images/site-icon.png).
 
 = 0.3.0 =
 * New: Import page (template "Import (showcase)" and pattern): moving from Sermon Manager, and every way to add sermons by hand.
