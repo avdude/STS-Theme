@@ -31,9 +31,9 @@ $sts_library = function_exists( 'sts_theme_library_url' ) ? sts_theme_library_ur
 
 <!-- wp:sermon-to-site/series {"limit":3,"align":"wide"} /-->
 
-<!-- wp:heading {"align":"wide","style":{"spacing":{"margin":{"top":"var:preset|spacing|50"}}}} -->
-<h2 class="wp-block-heading alignwide" style="margin-top:var(--wp--preset--spacing--50)"><?php esc_html_e( 'Recent sermons', 'sts-theme' ); ?></h2>
-<!-- /wp:heading -->
+<!-- wp:spacer {"height":"var:preset|spacing|40"} -->
+<div style="height:var(--wp--preset--spacing--40)" aria-hidden="true" class="wp-block-spacer"></div>
+<!-- /wp:spacer -->
 
 <!-- wp:sermon-to-site/library {"perPage":6,"showLatest":false,"showSeries":false,"showSubscribe":false,"align":"wide"} /--></div>
 <!-- /wp:group -->

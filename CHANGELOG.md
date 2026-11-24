@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.4.1] - 2026-11-24
+
+- The home page's library section showed "Recent sermons" twice: the theme's heading and the Sermon library block's own. The theme's heading is gone.
+
 ## [0.4.0] - 2026-11-24
 
 - New: "See it working" section on the home page (pattern `sts-theme/screens`), after the feature cards: the sermon page, public library, sermon editor, Sermons screen and phone view, each with a short explanation. Images are the plugin's WordPress.org screenshots, cropped and compressed (`assets/images/screens/`).

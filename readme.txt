@@ -3,7 +3,7 @@ Contributors: avdude
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 0.4.0
+Stable tag: 0.4.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,9 @@ The home page walks a visitor through what Sermon to Site does, with the plugin'
 Headings use Montserrat, the brand's typeface, loaded from Google Fonts. Body text uses the visitor's system font.
 
 == Changelog ==
+
+= 0.4.1 =
+* The home page's library section no longer shows "Recent sermons" twice (the Sermon library block has its own heading).
 
 = 0.4.0 =
 * New: "See it working" on the home page: screenshots of the sermon page, library, sermon editor, Sermons screen and a phone, from the plugin's WordPress.org screenshots.
