@@ -21,6 +21,10 @@ $sts_library = function_exists( 'sts_theme_library_url' ) ? sts_theme_library_ur
 
 <!-- wp:paragraph {"style":{"color":{"text":"#B9C7D2"}}} -->
 <p class="has-text-color" style="color:#B9C7D2"><?php esc_html_e( 'From your service to your website. Automatically.', 'sts-theme' ); ?></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"style":{"color":{"text":"#B9C7D2"}},"fontSize":"small"} -->
+<p class="has-text-color has-small-font-size" style="color:#B9C7D2"><?php esc_html_e( 'Questions?', 'sts-theme' ); ?> <a href="<?php echo esc_url( 'mailto:' . ( function_exists( 'sts_theme_support_email' ) ? sts_theme_support_email() : 'support@sermontosite.com' ) ); ?>"><?php echo esc_html( function_exists( 'sts_theme_support_email' ) ? sts_theme_support_email() : 'support@sermontosite.com' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 

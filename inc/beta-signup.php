@@ -12,6 +12,17 @@ defined( 'ABSPATH' ) || exit;
 const STT_BETA_TYPE   = 'stt_beta_signup';
 const STT_BETA_ACTION = 'stt_beta_signup';
 
+/**
+ * The support address: beta sign-up notices go to it, and the thank-you email
+ * comes from it. Change it with the sts_theme_support_email filter.
+ *
+ * @return string
+ */
+function sts_theme_support_email() {
+	$email = (string) apply_filters( 'sts_theme_support_email', 'support@sermontosite.com' );
+	return is_email( $email ) ? $email : (string) get_option( 'admin_email' );
+}
+
 add_action( 'init', 'stt_beta_register' );
 /** The private post type that holds sign-ups. */
 function stt_beta_register() {
@@ -191,20 +202,36 @@ function stt_beta_submit() {
 	update_post_meta( $id, '_stt_phone', $v['phone'] );
 	update_post_meta( $id, '_stt_website', $v['website'] );
 
-	$admin = get_option( 'admin_email' );
-	if ( $admin ) {
-		$body  = __( 'A new beta tester signed up on', 'sts-theme' ) . ' ' . home_url( '/' ) . "\n\n";
-		$body .= __( 'Name', 'sts-theme' ) . ': ' . $v['name'] . "\n";
-		$body .= __( 'Email', 'sts-theme' ) . ': ' . $v['email'] . "\n";
-		$body .= __( 'Phone', 'sts-theme' ) . ': ' . ( '' !== $v['phone'] ? $v['phone'] : '—' ) . "\n";
-		$body .= __( 'Website', 'sts-theme' ) . ': ' . ( '' !== $v['website'] ? $v['website'] : '—' ) . "\n\n";
-		$body .= __( 'Everyone who signed up:', 'sts-theme' ) . ' ' . admin_url( 'edit.php?post_type=' . STT_BETA_TYPE );
+	$support = sts_theme_support_email();
+	$from    = 'From: ' . wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES ) . ' <' . $support . '>';
+
+	// To the support address: who signed up.
+	$body  = __( 'A new beta tester signed up on', 'sts-theme' ) . ' ' . home_url( '/' ) . "\n\n";
+	$body .= __( 'Name', 'sts-theme' ) . ': ' . $v['name'] . "\n";
+	$body .= __( 'Email', 'sts-theme' ) . ': ' . $v['email'] . "\n";
+	$body .= __( 'Phone', 'sts-theme' ) . ': ' . ( '' !== $v['phone'] ? $v['phone'] : '—' ) . "\n";
+	$body .= __( 'Website', 'sts-theme' ) . ': ' . $v['website'] . "\n\n";
+	$body .= __( 'Everyone who signed up:', 'sts-theme' ) . ' ' . admin_url( 'edit.php?post_type=' . STT_BETA_TYPE );
+	wp_mail(
+		$support,
+		/* translators: %s: name. */
+		sprintf( __( 'New beta tester: %s', 'sts-theme' ), $v['name'] ),
+		$body,
+		array( $from, 'Reply-To: ' . $v['name'] . ' <' . $v['email'] . '>' )
+	);
+
+	// To the person, the first time they sign up: a thank-you they can reply to.
+	if ( ! $existing ) {
+		/* translators: %s: first name or full name. */
+		$thanks  = sprintf( __( 'Hi %s,', 'sts-theme' ), $v['name'] ) . "\n\n";
+		$thanks .= __( 'Thanks for signing up to be a Sermon to Site beta tester. We\'ll email you a pre-release copy as soon as it\'s ready to install on your WordPress site.', 'sts-theme' ) . "\n\n";
+		$thanks .= __( 'Questions in the meantime? Just reply to this email.', 'sts-theme' ) . "\n\n";
+		$thanks .= __( 'Sermon to Site', 'sts-theme' ) . "\n" . home_url( '/' ) . "\n";
 		wp_mail(
-			$admin,
-			/* translators: %s: name. */
-			sprintf( __( 'New beta tester: %s', 'sts-theme' ), $v['name'] ),
-			$body,
-			array( 'Reply-To: ' . $v['name'] . ' <' . $v['email'] . '>' )
+			$v['email'],
+			__( 'You\'re on the Sermon to Site beta list', 'sts-theme' ),
+			$thanks,
+			array( $from, 'Reply-To: ' . $support )
 		);
 	}
 

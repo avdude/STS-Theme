@@ -50,6 +50,10 @@
 
 <!-- wp:paragraph {"textColor":"muted","fontSize":"small"} -->
 <p class="has-muted-color has-text-color has-small-font-size"><?php esc_html_e( 'Needs WordPress 6.4 or later and PHP 8.1 or later.', 'sts-theme' ); ?></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph {"className":"stt-support"} -->
+<p class="stt-support"><?php esc_html_e( 'Questions?', 'sts-theme' ); ?> <a href="<?php echo esc_url( 'mailto:' . ( function_exists( 'sts_theme_support_email' ) ? sts_theme_support_email() : 'support@sermontosite.com' ) ); ?>"><?php echo esc_html( function_exists( 'sts_theme_support_email' ) ? sts_theme_support_email() : 'support@sermontosite.com' ); ?></a></p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:column -->
 

@@ -4,7 +4,7 @@ Theme URI: https://sermontosite.com
 Author: avdude
 Author URI: https://avdude.com
 Description: A block theme that shows off the Sermon to Site plugin. A navy, gold and teal look from the Sermon to Site brand, a home page that walks through how Sunday's service becomes a sermon page (with the plugin's live blocks in place), and header and footer parts that the plugin's sermon, library and series pages sit inside.
-Version: 0.5.1
+Version: 0.6.0
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 8.1
@@ -153,3 +153,7 @@ a { text-underline-offset: 3px; }
 .stt-form-done { padding: 22px; border-radius: 16px; background: var(--wp--preset--color--teal-soft); color: var(--wp--preset--color--teal-deep); }
 .stt-form-done strong { display: block; font-family: var(--wp--preset--font-family--heading); font-size: 1.25rem; color: var(--wp--preset--color--navy); }
 .stt-form-done p { margin: 6px 0 0; }
+
+/* "Questions? support@…" on the beta page */
+.stt-support { margin-top: 18px; padding: 14px 18px; border-radius: 14px; background: #fff; border: 1px solid var(--wp--preset--color--line); font-size: .9375rem; }
+.stt-support a { font-weight: 600; }

@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.6.0] - 2026-11-24
+
+- Beta sign-up notices go to the support address, support@sermontosite.com (`sts_theme_support_email()`, filter `sts_theme_support_email`; falls back to the admin email if the filtered value isn't an email), sent From that address with Reply-To set to the person.
+- New beta testers get a thank-you email ("You're on the Sermon to Site beta list") from the support address, with Reply-To support. Sent once, on the first sign-up for an email address.
+- "Questions? support@sermontosite.com" in the footer and under "What you get" on the beta page.
+
 ## [0.5.1] - 2026-11-24
 
 - Fixed: the beta sign-up page showed `[stt_beta_form]` instead of the form. WordPress runs shortcodes in post content but not in block templates, so the theme now runs them in shortcode blocks wherever they render (`sts_theme_template_shortcodes()`).
